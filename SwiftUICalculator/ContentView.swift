@@ -142,7 +142,7 @@ struct ContentView: View
 		if(validInput())
 		{
 			var workings = visibleWorkings.replacingOccurrences(of: "%", with: "*0.01")
-			workings = visibleWorkings.replacingOccurrences(of: "X", with: "*")
+			workings = workings.replacingOccurrences(of: "X", with: "*")
 			let expression = NSExpression(format: workings)
 			let result = expression.expressionValue(with: nil, context: nil) as! Double
 			return formatResult(val: result)
